@@ -3,12 +3,15 @@ using namespace std;
 
 int is_prime(int n){
     int counter = 0;
+
     for (int i = 1; i<=n; i++){
         if(n%i == 0){
             counter += 1;
         }
+        if(counter > 2){
+            return 0;
+        }
     }
-
     if(counter == 2){
         return n;
     }
@@ -20,7 +23,6 @@ int is_prime(int n){
 int main(){
     int qtd = 0;
     int maior = 0;
-
     for(int i = 1; i<=100000; i++){
         int a = is_prime(i);
         if(a!=0){
